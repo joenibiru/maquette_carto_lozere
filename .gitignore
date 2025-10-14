@@ -1,0 +1,38 @@
+﻿# --- CartoFaune Lozère ---
+# Éditeurs / Système
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# OneDrive / Profil Windows
+AppData/
+**/AppData/**
+OneDrive*/   # par prudence si un niveau remonte
+
+# Dépendances / build / logs
+node_modules/
+dist/
+build/
+.cache/
+*.log
+*.tmp
+*.bak
+*.old
+coverage/
+
+# Binaires lourds (non suivis par GitHub)
+*.dll
+*.mp4
+*.mov
+*.avi
+*.zip
+*.7z
+*.rar
+*.iso
+
+# Projets Adobe, sources lourdes (optionnel)
+*.psd
+*.ai
+*.xcf

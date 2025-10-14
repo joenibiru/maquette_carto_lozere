@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observatoire de la Faune - Lozère</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/Styles/style.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="shortcut icon" href="/Images/ChatGPT Image 10 oct. 2025, 11_51_36.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="/Images/logo carto.png" alt="Logo pointeur map fourmis avec un cerf au centre">
+                </div>
+                <div class="site-title">
+                    <h1>Faune de Lozère</h1>
+                    <p>Cartographie interactive</p>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="view-toggle">
+                    <button class="view-btn active" id="mapViewBtn" onclick="switchView('map')">🗺️ Carte</button>
+                    <button class="view-btn" id="speciesViewBtn" onclick="switchView('species')">📋 Espèces</button>
+                </div>
+                <div class="species-counter">
+                    <span id="speciesCount">3</span> espèces
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="filters-section">
+                <h3>🔍 Filtres</h3>
+                <div class="filter-group">
+                    <label>Recherche</label>
+                    <input type="text" id="searchInput" placeholder="Nom de l'espèce...">
+                </div>
+                <div class="filter-group">
+                    <label>Famille</label>
+                    <select id="familyFilter" onchange="applyFilters()">
+                        <option value="all">Toutes</option>
+                        <option value="Mammifères">Mammifères</option>
+                        <option value="Oiseaux">Oiseaux</option>
+                        <option value="Insectes">Insectes</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Statut</label>
+                    <select id="statusFilter" onchange="applyFilters()">
+                        <option value="all">Tous</option>
+                        <option value="Commun">Commun</option>
+                        <option value="Protégé">Protégé</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="mapView" class="map-container">
+            <div id="map"></div>
+        </div>
+
+        <div id="speciesView" class="species-view hidden">
+            <div class="species-grid" id="speciesGrid"></div>
+        </div>
+    </div>
+
+    <div id="detailModal" class="modal" onclick="closeModalOnBackground(event)">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="/Scripts/script.js"></script>
+</body>
+
+</html>
