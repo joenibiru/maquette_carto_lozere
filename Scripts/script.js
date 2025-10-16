@@ -1,304 +1,305 @@
 // Base de données des espèces de Lozère avec positions GPS réelles
 const speciesData = [
-    {
-        id: 1,
-        name: "Vautour fauve",
-        scientificName: "Gyps fulvus",
-        family: "Oiseaux",
-        status: "Protégé",
-        image: "https://tryzub.fr/images/nature/oiseaux/vautour_tete_chauve.JPEG",
-        description: "Grand rapace nécrophage réintroduit avec succès dans les Grands Causses depuis 1981. Population en croissance de +14% par an.",
-        habitat: "Gorges et falaises calcaires des Causses",
-        observations: [
-            { lat: 44.3356, lng: 3.2847, date: "2025-09-15", location: "Gorges du Tarn" },
-            { lat: 44.2945, lng: 3.4123, date: "2025-09-20", location: "Causse Méjean" },
-            { lat: 44.4123, lng: 3.3567, date: "2025-10-01", location: "Gorges de la Jonte" },
-            { lat: 44.1876, lng: 3.2934, date: "2025-10-05", location: "Causse Noir" }
-        ]
-    },
-    {
-        id: 2,
-        name: "Cerf élaphe",
-        scientificName: "Cervus elaphus",
-        family: "Mammifères",
-        status: "Commun",
-        image: "https://www.notrenature.be/media/cache/fb_og_image/uploads/media/5e5fbd74a994a/vilda-92658-burlende-edelhert-yves-adams-800-px-45104.jpg",
-        description: "Grand cervidé présent dans les forêts de Lozère. Proie principale du loup avec 80% de son régime alimentaire.",
-        habitat: "Forêts de résineux et de feuillus, zones bocagères",
-        observations: [
-            { lat: 44.5234, lng: 3.7123, date: "2025-09-18", location: "Mont Lozère" },
-            { lat: 44.4567, lng: 3.6845, date: "2025-09-25", location: "Forêt de Mercoire" },
-            { lat: 44.3789, lng: 3.5234, date: "2025-10-03", location: "Forêt du Goulet" },
-            { lat: 44.6012, lng: 3.7456, date: "2025-10-08", location: "Pic de Finiels" }
-        ]
-    },
-    {
-        id: 3,
-        name: "Mouflon de Corse",
-        scientificName: "Ovis gmelini musimon",
-        family: "Mammifères",
-        status: "Protégé",
-        image: "https://www.mercantour-parcnational.fr/sites/mercantour-parcnational.fr/files/styles/extra_large/public/thumbnails/image/22239_pnm_valarcher-robert_800px.jpg?itok=aKVqPtuI",
-        description: "Ongulé sauvage des reliefs rocheux, présent de 300 à 2500m d'altitude. Population en équilibre avec son milieu.",
-        habitat: "Milieux rocailleux bien drainés, landes et maquis",
-        observations: [
-            { lat: 44.4823, lng: 3.7689, date: "2025-09-22", location: "Crêtes du Mont Lozère" },
-            { lat: 44.3456, lng: 3.4789, date: "2025-09-28", location: "Causse de Sauveterre" },
-            { lat: 44.2678, lng: 3.3912, date: "2025-10-04", location: "Rochers du Boundoulaou" }
-        ]
-    },
-    {
-        id: 4,
-        name: "Loup gris",
-        scientificName: "Canis lupus",
-        family: "Mammifères",
-        status: "Protégé",
-        image: "https://s3-eu-west-1.amazonaws.com/blog-ecotree/blog/0001/02/47b656453f6be8c384bbf07abf3613d1e4a3fa0d.jpeg",
-        description: "Prédateur naturellement de retour en Lozère. Se nourrit à 80% d'ongulés sauvages (cerfs, chevreuils, sangliers, mouflons).",
-        habitat: "Forêts et zones montagneuses, zones d'élevage extensif",
-        observations: [
-            { lat: 44.5456, lng: 3.7234, date: "2025-09-20", location: "Forêts du Mont Lozère" },
-            { lat: 44.4123, lng: 3.6012, date: "2025-10-02", location: "Vallée du Lot" },
-            { lat: 44.3234, lng: 3.4567, date: "2025-10-06", location: "Causse Méjean nord" }
-        ]
-    },
-    {
-        id: 5,
-        name: "Vautour moine",
-        scientificName: "Aegypius monachus",
-        family: "Oiseaux",
-        status: "Protégé",
-        image: "https://www.ornitho.photos/wp-content/uploads/2024/06/blog2024.05.23_Z928441-Modifier-1024x683.jpg",
-        description: "Plus grand rapace d'Europe, réintroduit dans les Grands Causses. Nécrophage comme le vautour fauve.",
-        habitat: "Falaises isolées et zones boisées des Causses",
-        observations: [
-            { lat: 44.3123, lng: 3.3456, date: "2025-09-24", location: "Gorges du Tarn" },
-            { lat: 44.2567, lng: 3.4234, date: "2025-10-07", location: "Causse Méjean sud" }
-        ]
-    },
-    {
-        id: 6,
-        name: "Chevreuil européen",
-        scientificName: "Capreolus capreolus",
-        family: "Mammifères",
-        status: "Commun",
-        image: "https://ressources.shna-ofab.fr/visuels/1479803045_26_CAPREOLUS_CAPREOLUS_G.BEDRINES.JPG.jpg",
-        description: "Petit cervidé très répandu en Lozère. Fait partie des proies du loup.",
-        habitat: "Lisières forestières, bocages, zones semi-ouvertes",
-        observations: [
-            { lat: 44.4789, lng: 3.6234, date: "2025-09-19", location: "Vallée du Tarn" },
-            { lat: 44.3912, lng: 3.5123, date: "2025-09-26", location: "Forêt de Mercoire" },
-            { lat: 44.5123, lng: 3.7012, date: "2025-10-05", location: "Bois du Bleymard" }
-        ]
-    },
-    {
-        id: 7,
-        name: "Aigle royal",
-        scientificName: "Aquila chrysaetos",
-        family: "Oiseaux",
-        status: "Protégé",
-        image: "https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/7/3/8/6/246837-1-fre-FR/dsc3102brunoberthemy.jpg",
-        description: "Majestueux rapace des montagnes, nichant dans les falaises isolées.",
-        habitat: "Hautes falaises et zones montagneuses",
-        observations: [
-            { lat: 44.5678, lng: 3.7890, date: "2025-09-21", location: "Sommet du Finiels" },
-            { lat: 44.3456, lng: 3.3789, date: "2025-10-03", location: "Falaises de la Jonte" }
-        ]
-    },
-    {
-        id: 8,
-        name: "Sanglier",
-        scientificName: "Sus scrofa",
-        family: "Mammifères",
-        status: "Commun",
-        image: "https://www.radiofrance.fr/pikapi/images/ac6ec2d0-55aa-4d96-bc77-e95e7191e26f/1280?webp=false",
-        description: "Ongulé forestier omnivore, très présent en Lozère. Fait partie du régime alimentaire du loup.",
-        habitat: "Forêts mixtes, zones de bocage",
-        observations: [
-            { lat: 44.4234, lng: 3.5678, date: "2025-09-23", location: "Forêt de Mercoire" },
-            { lat: 44.3678, lng: 3.4912, date: "2025-09-30", location: "Vallée du Lot" },
-            { lat: 44.5012, lng: 3.6789, date: "2025-10-08", location: "Bois de Cubières" }
-        ]
-    },
-    {
-        id: 9,
-        name: "Milan royal",
-        scientificName: "Milvus milvus",
-        family: "Oiseaux",
-        status: "Protégé",
-        image: "https://www.pyrenees-parcnational.fr/sites/pyrenees-parcnational.fr/files/styles/extra_large/public/milan_royal_louron_patrick_harle_prtps_2014_20.jpg?itok=G56O0exq",
-        description: "Rapace migrateur reconnaissable à sa queue échancrée rousse. Présent surtout en période de migration.",
-        habitat: "Zones agricoles ouvertes, prairies",
-        observations: [
-            { lat: 44.3789, lng: 3.4567, date: "2025-09-17", location: "Plateau de l'Aubrac" },
-            { lat: 44.4456, lng: 3.5890, date: "2025-09-29", location: "Vallée du Lot" }
-        ]
-    },
-    {
-        id: 10,
-        name: "Chamois",
-        scientificName: "Rupicapra rupicapra",
-        family: "Mammifères",
-        status: "Commun",
-        image: "https://woody.cloudly.space/app/uploads/aubracgorgesdutarn/2023/12/thumbs/maman-et-chamois-640x360.jpg",
-        description: "Capriné des zones rocheuses et montagneuses, présent dans les reliefs de Lozère.",
-        habitat: "Zones rocheuses et escarpées d'altitude",
-        observations: [
-            { lat: 44.5234, lng: 3.7567, date: "2025-09-27", location: "Crêtes du Mont Lozère" },
-            { lat: 44.4567, lng: 3.7123, date: "2025-10-04", location: "Vallée du Tarn" }
-        ]
-    },
-    {
-        id: 11,
-        name: "Apollon",
-        scientificName: "Parnassius apollo",
-        family: "Insectes",
-        status: "Protégé",
-        image: "https://www.pyrenees-parcnational.fr/sites/pyrenees-parcnational.fr/files/styles/slide_1500_1000/public/00002421_0.jpeg?itok=7lgX1xHY",
-        description: "Grand papillon emblématique des montagnes, protégé. Présent sur les Causses Méjean et Sauveterre. En déclin depuis 50 ans, il a disparu du Mont Lozère.",
-        habitat: "Pelouses et éboulis ensoleillés des Causses entre 1000 et 2000m",
-        observations: [
-            { lat: 44.2856, lng: 3.4234, date: "2025-07-12", location: "Causse Méjean" },
-            { lat: 44.3567, lng: 3.4512, date: "2025-07-18", location: "Causse de Sauveterre" },
-            { lat: 44.2734, lng: 3.3856, date: "2025-07-25", location: "Dalles du Méjean" }
-        ]
-    },
-    {
-        id: 12,
-        name: "Lucane cerf-volant",
-        scientificName: "Lucanus cervus",
-        family: "Insectes",
-        status: "Commun",
-        image: "https://diversité-forestière.ch/06_images-dossier/hirschkaefer-bafu-waldvielfalt-biodiversitaet-gettyimages-106417505.jpg",
-        description: "Plus grand coléoptère d'Europe avec ses mandibules en forme de bois de cerf. Actif au crépuscule de juin à août. Rare sur les Causses, très présent en ripisylve.",
-        habitat: "Forêts de feuillus, parcs arborés, bois mort",
-        observations: [
-            { lat: 44.4912, lng: 3.6345, date: "2025-06-20", location: "Forêt de Mercoire" },
-            { lat: 44.3234, lng: 3.4567, date: "2025-07-05", location: "Vallée du Tarn" },
-            { lat: 44.5123, lng: 3.7234, date: "2025-07-15", location: "Saint-Étienne-du-Valdonnez" }
-        ]
-    },
-    {
-        id: 13,
-        name: "Agrion de mercure",
-        scientificName: "Coenagrion mercuriale",
-        family: "Insectes",
-        status: "Protégé",
-        image: "https://www.lagaredesramieres.com/images/explorer-la-reserve/les-animaux/les-libellules/agrion-de-mercure.jpg",
-        description: "Petite demoiselle bleue et noire des ruisseaux. Bio-indicateur de la qualité des cours d'eau. Protégée par la Directive européenne Habitats-Faune-Flore.",
-        habitat: "Petits ruisseaux et fossés des prairies bien ensoleillés",
-        observations: [
-            { lat: 44.4456, lng: 3.5789, date: "2025-05-28", location: "Ruisseau du Bramont" },
-            { lat: 44.3678, lng: 3.4912, date: "2025-06-08", location: "Vallée du Lot" },
-            { lat: 44.5234, lng: 3.6123, date: "2025-06-15", location: "Sources du Tarn" }
-        ]
-    },
-    {
-        id: 14,
-        name: "Paon du jour",
-        scientificName: "Aglais io",
-        family: "Insectes",
-        status: "Commun",
-        image: "https://cdn-s-www.vosgesmatin.fr/images/8FADFC21-F393-48FD-95EC-F2C9A4F30DC8/MF_contenu/gros-plan-sur-le-paon-du-jour-1579793504.jpg",
-        description: "Papillon aux magnifiques ocelles rappelant les plumes de paon. En régression locale sur l'Aigoual et le Mont Lozère. Se nourrit sur les orties.",
-        habitat: "Prairies fleuries, lisières forestières, jardins",
-        observations: [
-            { lat: 44.4567, lng: 3.5234, date: "2025-08-03", location: "Prairies de Marvejols" },
-            { lat: 44.3789, lng: 3.4456, date: "2025-08-12", location: "Florac" },
-            { lat: 44.4123, lng: 3.5678, date: "2025-08-20", location: "Vallée de la Colagne" }
-        ]
-    },
-    {
-        id: 15,
-        name: "Grande Sauterelle verte",
-        scientificName: "Tettigonia viridissima",
-        family: "Insectes",
-        status: "Commun",
-        image: "https://www.shna-ofab.fr/visuels/1457002174_22_TETTIGONIA_VIRIDISSIMA_O.BARDET_-femelle.jpg",
-        description: "Grande sauterelle verte carnivore reconnaissable à son chant strident en été. Peut atteindre 5 cm de long. Active la nuit.",
-        habitat: "Prairies hautes, friches, lisières",
-        observations: [
-            { lat: 44.4234, lng: 3.5456, date: "2025-07-30", location: "Prairies de Chanac" },
-            { lat: 44.3456, lng: 3.4789, date: "2025-08-05", location: "Causse de Sauveterre" },
-            { lat: 44.5123, lng: 3.6234, date: "2025-08-18", location: "Mont Lozère" }
-        ]
-    },
-    {
-        id: 16,
-        name: "Cigale grise",
-        scientificName: "Cicada orni",
-        family: "Insectes",
-        status: "Commun",
-        image: "https://biodiversite-basse-durance.fr/espece/static/medias/51913_3264_Cigale.jpg",
-        description: "Insecte emblématique du Midi au chant caractéristique. Symbole de l'été méditerranéen. Les mâles chantent pour attirer les femelles.",
-        habitat: "Zones chaudes et ensoleillées, garrigues, bords de routes",
-        observations: [
-            { lat: 44.3234, lng: 3.4567, date: "2025-07-20", location: "Gorges du Tarn" },
-            { lat: 44.2845, lng: 3.3912, date: "2025-07-28", location: "Causse Noir" },
-            { lat: 44.3678, lng: 3.4123, date: "2025-08-08", location: "La Malène" }
-        ]
-    },
-    {
-        id: 17,
-        name: "Machaon",
-        scientificName: "Papilio machaon",
-        family: "Insectes",
-        status: "Commun",
-        image: "https://media.gerbeaud.net/2025/04/640/papilio-machaon.jpg",
-        description: "Grand papillon jaune et noir avec queue en hirondelle. Un des plus beaux papillons d'Europe. Vole de mars à octobre. Rapide et précis, peut atteindre 50 km/h.",
-        habitat: "Prairies fleuries, jardins, milieux ouverts",
-        observations: [
-            { lat: 44.4456, lng: 3.5678, date: "2025-06-15", location: "Vallée du Lot" },
-            { lat: 44.3789, lng: 3.4912, date: "2025-07-10", location: "Causse de Sauveterre" },
-            { lat: 44.5234, lng: 3.7123, date: "2025-08-02", location: "Mont Lozère" }
-        ]
-    },
-    {
-        id: 18,
-        name: "Criquet égyptien",
-        scientificName: "Anacridium aegyptium",
-        family: "Insectes",
-        status: "Commun",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Grasshopper_November_2008-3.jpg/1200px-Grasshopper_November_2008-3.jpg",
-        description: "Plus grand criquet d'Europe pouvant atteindre 7 cm. Reconnaissable à ses yeux rayés. Présent dans les zones chaudes du sud de la France.",
-        habitat: "Zones rocailleuses ensoleillées, garrigues",
-        observations: [
-            { lat: 44.3123, lng: 3.4234, date: "2025-08-15", location: "Gorges de la Jonte" },
-            { lat: 44.2567, lng: 3.3789, date: "2025-08-22", location: "Causse Noir" }
-        ]
-    },
-    {
-        id: 19,
-        name: "Coccinelle à 7 points",
-        scientificName: "Coccinella septempunctata",
-        family: "Insectes",
-        status: "Commun",
-        image: "https://i0.wp.com/jessica-joachim.com/wp-content/uploads/2022/02/Coccinelle-a-7-points-Coccinella-septempunctata-Servies-18.12.2021-4.jpg?ssl=1",
-        description: "Coccinelle la plus commune d'Europe. Auxiliaire précieux du jardinier, elle dévore les pucerons. Peut manger jusqu'à 100 pucerons par jour.",
-        habitat: "Jardins, prairies, cultures, zones fleuries",
-        observations: [
-            { lat: 44.4567, lng: 3.5234, date: "2025-05-20", location: "Marvejols" },
-            { lat: 44.3912, lng: 3.4678, date: "2025-06-10", location: "Florac" },
-            { lat: 44.4789, lng: 3.6123, date: "2025-07-05", location: "Mende" }
-        ]
-    },
-    {
-        id: 20,
-        name: "Bourdon terrestre",
-        scientificName: "Bombus terrestris",
-        family: "Insectes",
-        status: "Commun",
-        image: "https://www.apiculture.net/modules/prestablog/views/img/grid-for-1-7/up-img/346.jpg?218c4d56c9915deafc863d4e33fc911e",
-        description: "Gros bourdon noir et jaune, pollinisateur essentiel. Peut voler même par temps frais. Forme de grosses colonies souterraines.",
-        habitat: "Prairies fleuries, jardins, lisières, tous milieux fleuris",
-        observations: [
-            { lat: 44.4234, lng: 3.5456, date: "2025-04-15", location: "Prairies de Chanac" },
-            { lat: 44.3678, lng: 3.4912, date: "2025-05-22", location: "Causse Méjean" },
-            { lat: 44.5123, lng: 3.7234, date: "2025-06-18", location: "Mont Lozère" },
-            { lat: 44.4567, lng: 3.5789, date: "2025-07-08", location: "Vallée du Lot" }
-        ]
-    }
+  {
+    id: 1,
+    name: "Vautour fauve",
+    scientificName: "Gyps fulvus",
+    family: "Oiseaux",
+    status: "Protégé",
+    image: "https://tryzub.fr/images/nature/oiseaux/vautour_tete_chauve.JPEG",
+    description: "Grand rapace nécrophage réintroduit avec succès dans les Grands Causses depuis 1981. Population en croissance de +14% par an.",
+    habitat: "Gorges et falaises calcaires des Causses",
+    observations: [
+      { lat: 44.2789, lng: 3.2281, date: "2025-09-15", location: "Gorges du Tarn" },
+      { lat: 44.26691, lng: 3.39569, date: "2025-09-20", location: "Causse Méjean" },
+      { lat: 44.20079, lng: 3.348745, date: "2025-10-01", location: "Gorges de la Jonte" },
+      { lat: 44.19611, lng: 3.3775, date: "2025-10-05", location: "Causse Noir" }
+    ]
+  },
+  {
+    id: 2,
+    name: "Cerf élaphe",
+    scientificName: "Cervus elaphus",
+    family: "Mammifères",
+    status: "Commun",
+    image: "https://www.notrenature.be/media/cache/fb_og_image/uploads/media/5e5fbd74a994a/vilda-92658-burlende-edelhert-yves-adams-800-px-45104.jpg",
+    description: "Grand cervidé présent dans les forêts de Lozère. Proie principale du loup avec 80% de son régime alimentaire.",
+    habitat: "Forêts de résineux et de feuillus, zones bocagères",
+    observations: [
+      { lat: 44.4259, lng: 3.7442, date: "2025-09-18", location: "Mont Lozère" },
+      { lat: 44.616667, lng: 3.783333, date: "2025-09-25", location: "Forêt de Mercoire" },
+      { lat: 44.51786, lng: 3.79724, date: "2025-10-03", location: "Forêt du Goulet" },
+      { lat: 44.4259, lng: 3.7442, date: "2025-10-08", location: "Pic de Finiels" }
+    ]
+  },
+  {
+    id: 3,
+    name: "Mouflon de Corse",
+    scientificName: "Ovis gmelini musimon",
+    family: "Mammifères",
+    status: "Protégé",
+    image: "https://www.mercantour-parcnational.fr/sites/mercantour-parcnational.fr/files/styles/extra_large/public/thumbnails/image/22239_pnm_valarcher-robert_800px.jpg?itok=aKVqPtuI",
+    description: "Ongulé sauvage des reliefs rocheux, présent de 300 à 2500m d'altitude. Population en équilibre avec son milieu.",
+    habitat: "Milieux rocailleux bien drainés, landes et maquis",
+    observations: [
+      { lat: 44.4259, lng: 3.7442, date: "2025-09-22", location: "Crêtes du Mont Lozère" },
+      { lat: 44.3983, lng: 3.3122, date: "2025-09-28", location: "Causse de Sauveterre" },
+      { lat: 44.2130, lng: 3.4765, date: "2025-10-04", location: "Rochers du Boundoulaou" }
+    ]
+  },
+  {
+    id: 4,
+    name: "Loup gris",
+    scientificName: "Canis lupus",
+    family: "Mammifères",
+    status: "Protégé",
+    image: "https://s3-eu-west-1.amazonaws.com/blog-ecotree/blog/0001/02/47b656453f6be8c384bbf07abf3613d1e4a3fa0d.jpeg",
+    description: "Prédateur naturellement de retour en Lozère. Se nourrit à 80% d'ongulés sauvages (cerfs, chevreuils, sangliers, mouflons).",
+    habitat: "Forêts et zones montagneuses, zones d'élevage extensif",
+    observations: [
+      { lat: 44.4259, lng: 3.7442, date: "2025-09-20", location: "Forêts du Mont Lozère" },
+      { lat: 44.521514, lng: 3.497547, date: "2025-10-02", location: "Vallée du Lot" },
+      { lat: 44.3093, lng: 3.39829, date: "2025-10-06", location: "Causse Méjean nord" }
+    ]
+  },
+  {
+    id: 5,
+    name: "Vautour moine",
+    scientificName: "Aegypius monachus",
+    family: "Oiseaux",
+    status: "Protégé",
+    image: "https://www.ornitho.photos/wp-content/uploads/2024/06/blog2024.05.23_Z928441-Modifier-1024x683.jpg",
+    description: "Plus grand rapace d'Europe, réintroduit dans les Grands Causses. Nécrophage comme le vautour fauve.",
+    habitat: "Falaises isolées et zones boisées des Causses",
+    observations: [
+      { lat: 44.2789, lng: 3.2281, date: "2025-09-24", location: "Gorges du Tarn" },
+      { lat: 44.243794, lng: 3.351429, date: "2025-10-07", location: "Causse Méjean sud" }
+    ]
+  },
+  {
+    id: 6,
+    name: "Chevreuil européen",
+    scientificName: "Capreolus capreolus",
+    family: "Mammifères",
+    status: "Commun",
+    image: "https://ressources.shna-ofab.fr/visuels/1479803045_26_CAPREOLUS_CAPREOLUS_G.BEDRINES.JPG.jpg",
+    description: "Petit cervidé très répandu en Lozère. Fait partie des proies du loup.",
+    habitat: "Lisières forestières, bocages, zones semi-ouvertes",
+    observations: [
+      { lat: 44.370452, lng: 3.532874, date: "2025-09-19", location: "Vallée du Tarn" },
+      { lat: 44.616667, lng: 3.783333, date: "2025-09-26", location: "Forêt de Mercoire" },
+      { lat: 44.486321, lng: 3.735879, date: "2025-10-05", location: "Bois du Bleymard" }
+    ]
+  },
+  {
+    id: 7,
+    name: "Aigle royal",
+    scientificName: "Aquila chrysaetos",
+    family: "Oiseaux",
+    status: "Protégé",
+    image: "https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/7/3/8/6/246837-1-fre-FR/dsc3102brunoberthemy.jpg",
+    description: "Majestueux rapace des montagnes, nichant dans les falaises isolées.",
+    habitat: "Hautes falaises et zones montagneuses",
+    observations: [
+      { lat: 44.4259, lng: 3.7442, date: "2025-09-21", location: "Sommet du Finiels" },
+      { lat: 44.20079, lng: 3.348745, date: "2025-10-03", location: "Falaises de la Jonte" }
+    ]
+  },
+  {
+    id: 8,
+    name: "Sanglier",
+    scientificName: "Sus scrofa",
+    family: "Mammifères",
+    status: "Commun",
+    image: "https://www.radiofrance.fr/pikapi/images/ac6ec2d0-55aa-4d96-bc77-e95e7191e26f/1280?webp=false",
+    description: "Ongulé forestier omnivore, très présent en Lozère. Fait partie du régime alimentaire du loup.",
+    habitat: "Forêts mixtes, zones de bocage",
+    observations: [
+      { lat: 44.616667, lng: 3.783333, date: "2025-09-23", location: "Forêt de Mercoire" },
+      { lat: 44.521514, lng: 3.497547, date: "2025-09-30", location: "Vallée du Lot" },
+      { lat: 44.473225, lng: 3.77161, date: "2025-10-08", location: "Bois de Cubières" }
+    ]
+  },
+  {
+    id: 9,
+    name: "Milan royal",
+    scientificName: "Milvus milvus",
+    family: "Oiseaux",
+    status: "Protégé",
+    image: "https://www.pyrenees-parcnational.fr/sites/pyrenees-parcnational.fr/files/styles/extra_large/public/milan_royal_louron_patrick_harle_prtps_2014_20.jpg?itok=G56O0exq",
+    description: "Rapace migrateur reconnaissable à sa queue échancrée rousse. Présent surtout en période de migration.",
+    habitat: "Zones agricoles ouvertes, prairies",
+    observations: [
+      { lat: 44.722, lng: 3.286, date: "2025-09-17", location: "Aumont Aubrac" },
+      { lat: 44.521514, lng: 3.497547, date: "2025-09-29", location: "Vallée du Lot" }
+    ]
+  },
+  {
+    id: 10,
+    name: "Chamois",
+    scientificName: "Rupicapra rupicapra",
+    family: "Mammifères",
+    status: "Commun",
+    image: "https://woody.cloudly.space/app/uploads/aubracgorgesdutarn/2023/12/thumbs/maman-et-chamois-640x360.jpg",
+    description: "Capriné des zones rocheuses et montagneuses, présent dans les reliefs de Lozère.",
+    habitat: "Zones rocheuses et escarpées d'altitude",
+    observations: [
+      { lat: 44.4259, lng: 3.7442, date: "2025-09-27", location: "Crêtes du Mont Lozère" },
+      { lat: 44.370452, lng: 3.532874, date: "2025-10-04", location: "Vallée du Tarn" }
+    ]
+  },
+
+  {
+    id: 11,
+    name: "Lézard vert occidental",
+    scientificName: "Lacerta bilineata",
+    family: "Reptiles",
+    status: "Commun",
+    image: "https://www.lanaturemoi.com/wp-content/uploads/2021/08/Lezard-vert-Lacerta-bilineata-03.jpg",
+    description: "Superbe lézard vert émeraude, emblématique des Causses et des coteaux lozériens. Les mâles se parent d’un bleu intense à la gorge au printemps.",
+    habitat: "Haies, prairies, talus, bords de chemins ensoleillés",
+    observations: [
+      { lat: 44.3983, lng: 3.3122, date: "2025-05-22", location: "Causse de Sauveterre" },
+      { lat: 44.466806, lng: 3.340478, date: "2025-06-10", location: "Chanac" },
+      { lat: 44.4259, lng: 3.7442, date: "2025-06-20", location: "Mont Lozère" }
+    ]
+  },
+  {
+    id: 12,
+    name: "Lézard des murailles",
+    scientificName: "Podarcis muralis",
+    family: "Reptiles",
+    status: "Très commun",
+    image: "https://www.labaule-guerande.com/medias/images/info_pages/multitailles/640x480_lezard-des-murailles-882.jpg",
+    description: "Petit lézard brun rapide et curieux, souvent visible sur les vieux murs ou les rochers. Résistant et bien adapté à l’altitude lozérienne.",
+    habitat: "Murets, rocailles, bords de routes, zones urbaines",
+    observations: [
+      { lat: 44.550133, lng: 3.289894, date: "2025-05-12", location: "Marvejols" },
+      { lat: 44.324014, lng: 3.593714, date: "2025-06-04", location: "Florac" },
+      { lat: 44.486321, lng: 3.735879, date: "2025-07-15", location: "Le Bleymard" }
+    ]
+  },
+  {
+    id: 13,
+    name: "Couleuvre d’esculape",
+    scientificName: "Zamenis longissimus",
+    family: "Reptiles",
+    status: "Protégé",
+    image: "https://biodiv-occitanie.fr/static/medias/444446_8238_Couleuvre_dEsculape_-_Zamenis_longissimus_-_Ariege.jpg",
+    description: "Grande couleuvre non venimeuse, agile et arboricole. Fréquente les forêts et vergers lozériens. Symbole du caducée des médecins.",
+    habitat: "Lisières forestières, haies, murets, vergers anciens",
+    observations: [
+      { lat: 44.521514, lng: 3.497547, date: "2025-06-10", location: "Vallée du Lot" },
+      { lat: 44.616667, lng: 3.783333, date: "2025-06-22", location: "Forêt de Mercoire" },
+      { lat: 44.4259, lng: 3.7442, date: "2025-07-03", location: "Mont Lozère" }
+    ]
+  },
+  {
+    id: 14,
+    name: "Vipère aspic",
+    scientificName: "Vipera aspis",
+    family: "Reptiles",
+    status: "Commun",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/40/Vipera_aspis_Lothringen_044.jpg",
+    description: "Serpent venimeux discret, reconnaissable à sa tête triangulaire. Elle évite les humains et préfère fuir. Espèce protégée, utile à l’équilibre naturel.",
+    habitat: "Landes, éboulis, talus ensoleillés, lisières sèches",
+    observations: [
+      { lat: 44.26691, lng: 3.39569, date: "2025-07-01", location: "Causse Méjean" },
+      { lat: 44.515, lng: 3.255, date: "2025-07-10", location: "Vallée de la Colagne" },
+      { lat: 44.4259, lng: 3.7442, date: "2025-07-18", location: "Mont Lozère" }
+    ]
+  },
+  {
+    id: 15,
+    name: "Orvet fragile",
+    scientificName: "Anguis fragilis",
+    family: "Reptiles",
+    status: "Commun",
+    image: "https://www.researchgate.net/publication/283148990/figure/fig2/AS:288374389788675@1445765220778/Male-dorvet-fragile-Anguis-fragilis-presentant-des-points-bleus-Foret-de.png",
+    description: "Reptile sans pattes souvent confondu avec un serpent. Inoffensif, il se nourrit surtout de limaces. Sa queue se détache facilement pour échapper aux prédateurs.",
+    habitat: "Prairies, lisières, jardins, forêts humides",
+    observations: [
+      { lat: 44.466806, lng: 3.340478, date: "2025-06-15", location: "Chanac" },
+      { lat: 44.3983, lng: 3.3122, date: "2025-07-05", location: "Causse de Sauveterre" },
+      { lat: 44.4259, lng: 3.7442, date: "2025-07-20", location: "Mont Lozère" }
+    ]
+  },
+  {
+    id: 16,
+    name: "Couleuvre verte et jaune",
+    scientificName: "Hierophis viridiflavus",
+    family: "Reptiles",
+    status: "Commun",
+    image: "https://www.lanaturemoi.com/wp-content/uploads/2024/10/couleuvre-verte-et-jaune-25.jpg",
+    description: "Rapide et nerveuse, cette grande couleuvre non venimeuse affiche une robe verte et jaune spectaculaire. Elle chasse lézards et petits rongeurs.",
+    habitat: "Coteaux secs, garrigues, murs de pierre, talus",
+    observations: [
+      { lat: 44.2789, lng: 3.2281, date: "2025-06-30", location: "Gorges du Tarn" },
+      { lat: 44.19611, lng: 3.3775, date: "2025-07-08", location: "Causse Noir" },
+      { lat: 44.303045, lng: 3.320135, date: "2025-07-15", location: "La Malène" }
+    ]
+  },
+  {
+    id: 17,
+    name: "Tortue d’Hermann",
+    scientificName: "Testudo hermanni",
+    family: "Reptiles",
+    status: "Rare / introduite",
+    image: "https://www.jardiner-malin.fr/wp-content/uploads/2024/01/tortue-hermann-1.jpg",
+    description: "Petite tortue terrestre méditerranéenne, rarement observée en Lozère où quelques individus issus de relâchés ont été signalés. Espèce strictement protégée.",
+    habitat: "Garrigues, zones chaudes et sèches, maquis clairsemé",
+    observations: [
+      { lat: 44.3983, lng: 3.3122, date: "2025-08-02", location: "Causse de Sauveterre" },
+      { lat: 44.303045, lng: 3.320135, date: "2025-08-14", location: "Gorges du Tarn" }
+    ]
+  },
+  {
+    id: 18,
+    name: "Lézard vivipare",
+    scientificName: "Zootoca vivipara",
+    family: "Reptiles",
+    status: "Commun",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/L%C3%A9zard_vivipaire.jpg/1200px-L%C3%A9zard_vivipaire.jpg",
+    description: "Petit lézard brun des zones d’altitude, capable de donner naissance à des petits vivants. Il s’observe sur les tourbières du Mont Lozère.",
+    habitat: "Tourbières, landes humides, prairies d’altitude",
+    observations: [
+      { lat: 44.4259, lng: 3.7442, date: "2025-07-28", location: "Mont Lozère" },
+      { lat: 44.4259, lng: 3.7442, date: "2025-08-12", location: "Sommet du Finiels" }
+    ]
+  },
+  {
+    id: 19,
+    name: "Lézard ocellé",
+    scientificName: "Timon lepidus",
+    family: "Reptiles",
+    status: "Protégé",
+    image: "https://iodde.org/Handlers/HTFile.ashx?MEDIAID=183434",
+    description: "Le plus grand lézard d’Europe ! Robe vert vif constellée de taches bleues. Rare en Lozère, observé sur les Causses les plus chauds et en bordure du Tarn.",
+    habitat: "Garrigues, causses secs, talus pierreux, zones rocailleuses",
+    observations: [
+      { lat: 44.2789, lng: 3.2281, date: "2025-07-05", location: "Gorges du Tarn" },
+      { lat: 44.366298, lng: 3.410475, date: "2025-07-22", location: "Sainte-Enimie" },
+      { lat: 44.191643, lng: 3.206943, date: "2025-08-01", location: "Le Rozier" }
+    ]
+  },
+  {
+    id: 20,
+    name: "Couleuvre vipérine",
+    scientificName: "Natrix maura",
+    family: "Reptiles",
+    status: "Commun",
+    image: "https://www.infofauna.ch/sites/default/files/styles/grande_image_libre/public/images/media/2023/nama_meyer.jpg?itok=qThsbZOp",
+    description: "Couleuvre semi-aquatique imitant la vipère par sa forme et son comportement. Inoffensive et excellente nageuse, elle se nourrit surtout de poissons et d’amphibiens.",
+    habitat: "Bords de rivières, ruisseaux, étangs et mares",
+    observations: [
+      { lat: 44.521514, lng: 3.497547, date: "2025-06-10", location: "Rivière du Lot" },
+      { lat: 44.26691, lng: 3.39569, date: "2025-06-25", location: "Causse Méjean" },
+      { lat: 44.4259, lng: 3.7442, date: "2025-07-08", location: "Mont Lozère" },
+      { lat: 44.804, lng: 3.277, date: "2025-07-18", location: "Saint-Chély-d’Apcher" }
+    ]
+  }
 ];
+
 
 "use strict";
 
@@ -670,5 +671,78 @@ document.addEventListener("DOMContentLoaded", () => {
   const countEl = $("speciesCount");
   if (countEl) countEl.textContent = String(speciesData.length);
 });
+function initMap() {
+  // Centre sur la Lozère
+  map = L.map("map").setView([44.4833, 3.5], 10);
+
+  // --- Fonds de carte ---
+  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap contributors",
+    maxZoom: 19,
+  });
+
+  // Satellite (Esri World Imagery)
+  const esriSatellite = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community",
+      maxZoom: 19,
+    }
+  );
+
+  // Topo (Esri World Topo Map)
+  const esriTopo = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Tiles © Esri — Esri, Garmin, FAO, NOAA, USGS, © OpenStreetMap contributors",
+      maxZoom: 19,
+    }
+  );
+
+  // Topo (OpenTopoMap) – optionnel, avec ombrage + courbes
+  const openTopo = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+    attribution: "Map data © OpenStreetMap contributors, SRTM | Style © OpenTopoMap (CC-BY-SA)",
+    maxZoom: 17,
+  });
+
+  // --- Relief (ombrage) en surcouche activable ---
+  const esriHillshade = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/Elevations/World_Hillshade/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Hillshade © Esri",
+      maxZoom: 19,
+      opacity: 0.65, // ajuste si tu veux plus/moins de relief
+    }
+  );
+
+  // Ajoute un fond par défaut (OSM)
+  osm.addTo(map);
+
+  // Contrôle de couches (fonds exclusifs + surcouches)
+  const baseMaps = {
+    "Plan (OSM)": osm,
+    "Satellite (Esri)": esriSatellite,
+    "Topo (Esri)": esriTopo,
+    "Topo (OpenTopoMap)": openTopo,
+  };
+
+  const overlays = {
+    "Relief (Esri Hillshade)": esriHillshade,
+  };
+
+  L.control.layers(baseMaps, overlays, { collapsed: false }).addTo(map);
+
+  // Ajout initial des marqueurs
+  updateMarkers();
+}
+window.addEventListener('resize', () => {
+  if (map) map.invalidateSize();
+});
+
+// Si tu as un toggle liste/carte:
+function showMapView() {
+  // ... ton code pour afficher .map-container ...
+  requestAnimationFrame(() => map.invalidateSize());
+}
 
    

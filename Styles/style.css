@@ -1,460 +1,338 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===============================
+   CartoFaune Lozère — Design System
+   Palette pastel + typographies
+   =============================== */
+
+/* Google Fonts (à laisser tout en haut) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Nunito+Sans:wght@300;400;600&family=Poppins:wght@600;700&family=Raleway:wght@400;600&display=swap');
+
+:root{
+  /* Couleurs de la charte */
+  --sage: #CFE7D1;          /* Vert sauge (fonds doux) */
+  --beige: #EDE6D0;         /* Beige mousse (fonds / surfaces) */
+  --earth: #4A3F35;         /* Brun terre (titres/texte fort) */
+  --pollen: #E07A5F;        /* Orange pollen (accent doux) */
+  --dawn: #8FB8DE;          /* Bleu rosée (info) */
+  --locator: #E94E3C;       /* Rouge localisateur (CTA) */
+
+  /* Neutres & états */
+  --ink: #2B2B2B;           /* Texte principal sur clair */
+  --muted: #667085;         /* Texte secondaire */
+  --surface: #FFFFFF;       /* Cartes, modales */
+  --surface-alt: #F7F6F2;   /* Arrière-plans très doux */
+  --border: #DCDCDC;        /* Lignes, séparateurs */
+
+  /* Rayons / ombres */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.10);
+
+  /* Typographies */
+  --font-title: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-sub: 'Raleway', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-body: 'Nunito Sans', 'Lato', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f5f5;
+/* Reset de base */
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--beige) 0%, var(--surface-alt) 100%);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
 }
 
-.header {
-    background: linear-gradient(135deg, #c4ebab 0%, #70c93d 100%);
-    color: white;
-    padding: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* ---------- Header ---------- */
+
+.header{
+  background: linear-gradient(135deg, var(--sage) 0%, var(--beige) 100%);
+  color: var(--earth);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid var(--border);
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+.header-content{
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:1rem;
 }
 
-.logo-section {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.logo-section{ display:flex; align-items:center; gap:1rem; }
+
+.logo{
+  width:80px; height:80px; background: var(--surface);
+  border-radius: 12px;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  padding:.5rem; box-shadow: var(--shadow-sm); border:1px solid var(--border);
 }
 
-.logo {
-    width: 80px;
-    height: 80px;
-    background: #d4e4d8;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    padding: 0.5rem;
+.logo img{ width:100%; height:100%; object-fit:contain; }
+
+.site-title h1{
+  font-family: var(--font-title);
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  letter-spacing:.2px;
+  color: var(--earth);
+  margin-bottom:.25rem;
 }
 
-.logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.site-title p{
+  font-family: var(--font-sub);
+  font-size:.95rem; color: var(--muted);
 }
 
-.site-title h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.3rem;
+/* Contrôles header */
+.header-controls{ display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
+
+.view-toggle{
+  display:flex; background: rgba(255,255,255,.55);
+  border:1px solid var(--border); border-radius: var(--radius-md); overflow:hidden;
 }
 
-.site-title p {
-    font-size: 0.9rem;
-    opacity: 0.9;
+.view-btn{
+  padding:.5rem 1.1rem; background:transparent; border:none; color: var(--earth);
+  cursor:pointer; font-size:.9rem; transition: background .25s, color .25s;
+}
+.view-btn.active{ background: var(--sage); color: var(--earth); }
+.view-btn:hover{ background: rgba(207,231,209,.6); }
+
+.species-counter{
+  background: var(--surface);
+  padding:.5rem 1rem; border-radius: var(--radius-md);
+  border:1px solid var(--border); font-size:.9rem; color: var(--earth);
 }
 
-.header-controls {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
-}
+#speciesCount{ font-weight:700; font-family: var(--font-title); }
 
-.view-toggle {
-    display: flex;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.view-btn {
-    padding: 0.5rem 1.2rem;
-    background: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-}
-
-.view-btn.active {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-.view-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.species-counter {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-}
-
-#speciesCount {
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.main-container {
-    display: flex;
-    height: calc(100vh - 150px);
-}
+/* ---------- Layout ---------- */
+.main-container{ display:flex; height: calc(100vh - 150px); }
 
 .sidebar {
-    width: 350px;
-    background: white;
-    padding: 1.5rem;
-    overflow-y: auto;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  background: var(--surface);
+  padding: 1.5rem;
+  overflow-y: auto;
+  box-shadow: var(--shadow-sm);
+  border-right: 1px solid var(--border);
+
+  /* --- Personnalisation du fond --- */
+  background-color: #ddcd9a;
+  background-image: url(/Images/logo.png);
+  background-repeat: no-repeat;         
+  background-position: bottom;          
+  background-size: contain;             
 }
 
-.filters-section {
-    margin-bottom: 1.5rem;
+.filters-section{ margin-bottom:1.5rem; }
+.filters-section h3{
+  font-family: var(--font-sub); font-weight:600;
+  font-size:1rem; margin-bottom:1rem; color: var(--earth);
 }
 
-.filters-section h3 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.filter-group {
-    margin-bottom: 1rem;
-}
-
-.filter-group label {
-    display: block;
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 0.3rem;
-    font-weight: 500;
+.filter-group{ margin-bottom:1rem; }
+.filter-group label{
+  display:block; font-size:.85rem; color: var(--muted);
+  margin-bottom:.35rem; font-weight:600;
 }
 
 .filter-group select,
-.filter-group input {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    transition: border-color 0.3s;
+.filter-group input{
+  width:100%; padding:.65rem .7rem; border:1px solid var(--border);
+  border-radius: var(--radius-sm); font-size:.95rem; background: var(--surface-alt);
+  transition: border-color .2s, background-color .2s, box-shadow .2s;
 }
-
 .filter-group select:focus,
-.filter-group input:focus {
-    outline: none;
-    border-color: #4a7c2c;
+.filter-group input:focus{
+  outline:none; border-color: var(--locator);
+  box-shadow: 0 0 0 3px rgba(233,78,60,.15);
+  background: #FFF;
 }
 
-.map-container {
-    flex: 1;
-    position: relative;
+/* ---------- Map & vues ---------- */
+.map-container{ flex:1; position:relative; }
+#map{ width:100%; height:100%; }
+
+.species-view{
+  flex:1; padding:2rem; overflow-y:auto; background: var(--surface-alt);
 }
 
-#map {
-    width: 100%;
+.species-grid{
+  display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:1.5rem;
+}
+
+.species-card{
+  background: var(--surface); border-radius: 12px; overflow:hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s, box-shadow .25s; cursor:pointer; border:1px solid var(--border);
+}
+.species-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.species-image{ width:100%; height:200px; object-fit:cover; }
+
+.species-body{ padding:1.2rem; }
+
+.species-header{
+  display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;
+}
+
+.species-names h3{
+  font-family: var(--font-title);
+  font-size:1.15rem; color: var(--earth); margin-bottom:.3rem;
+}
+
+.scientific{ font-style:italic; color: var(--muted); font-size:.9rem; }
+
+/* Badges statut (pastel, doux) */
+.status-badge{
+  padding:.32rem .8rem; border-radius: 999px; font-size:.78rem; font-weight:700;
+  border:1px solid var(--border);
+}
+.status-badge.protected{ background: color-mix(in srgb, var(--pollen) 14%, white); color:#7A3A2F; }
+.status-badge.common{ background: color-mix(in srgb, var(--dawn) 20%, white); color:#214B73; }
+
+.species-description{
+  color:#4D4D4D; font-size:.95rem; margin: .75rem 0 1rem; line-height:1.6;
+}
+
+.species-tags{ display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem; }
+.tag{
+  background: color-mix(in srgb, var(--sage) 30%, white);
+  padding:.28rem .7rem; border-radius: 14px; font-size:.78rem; color:#4b5563;
+  border:1px solid var(--border);
+}
+
+/* CTA : Rouge localisateur */
+.view-map-btn{
+  width:100%; padding:.7rem .9rem; background: var(--locator); color:#FFF;
+  border:none; border-radius: var(--radius-sm); cursor:pointer; font-size:.95rem; font-weight:700;
+  box-shadow: 0 2px 0 rgba(0,0,0,.05);
+  transition: filter .15s, transform .05s;
+}
+.view-map-btn:hover{ filter: brightness(0.95); }
+.view-map-btn:active{ transform: translateY(1px); }
+
+/* ---------- Modale ---------- */
+.modal{
+  display:none; position:fixed; inset:0; background: rgba(0,0,0,.6);
+  z-index:10000; padding:2rem;
+}
+.modal.active{ display:flex; align-items:center; justify-content:center; }
+
+.modal-content{
+  background: var(--surface); border-radius: var(--radius-lg);
+  max-width: 720px; max-height: 90vh; overflow-y:auto; position:relative;
+  box-shadow: var(--shadow-md); border:1px solid var(--border);
+}
+
+.modal-image{ width:100%; height:300px; object-fit:cover; }
+
+.modal-body{ padding:2rem; }
+
+.modal-header{
+  display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.2rem;
+}
+.modal-header h2{
+  font-family: var(--font-title); color: var(--earth); margin-bottom:.4rem; font-size:1.4rem;
+}
+
+.close-btn{
+  position:absolute; top:1rem; right:1rem; background: #FFF; border:none;
+  width:40px; height:40px; border-radius: 999px; font-size:1.35rem; cursor:pointer;
+  box-shadow: var(--shadow-sm); z-index:1; transition: background .2s;
+  border:1px solid var(--border);
+}
+.close-btn:hover{ background: var(--surface-alt); }
+
+.detail-section{ margin-bottom:1.25rem; }
+.detail-section h3{
+  color: var(--earth); font-family: var(--font-sub); font-size:1rem; margin-bottom:.5rem; font-weight:600;
+}
+.detail-section p{ color:#4D4D4D; line-height:1.65; }
+
+.hidden{ display:none !important; }
+
+/* ---------- Leaflet popup (pastel) ---------- */
+.leaflet-popup-content-wrapper{ border-radius: 10px; border:1px solid var(--border); }
+.leaflet-popup.species-popup .leaflet-popup-content{ margin: 8px 10px; }
+
+.popup-content{
+  display:grid; grid-template-columns:72px 1fr; gap:10px; align-items:center; min-width:260px;
+}
+.popup-image{
+  width:72px; height:72px; object-fit:cover; border-radius: 8px; border:1px solid var(--border);
+}
+.popup-info h4{
+  color: var(--earth); margin:0 0 2px; font-size:15px; font-family: var(--font-sub); font-weight:600;
+}
+.popup-date{ margin:2px 0; font-size:12px; color: var(--muted); opacity:.9; }
+
+/* ---------- Layout (desktop) ---------- */
+.main-container{
+  display:grid;
+  grid-template-columns: 350px 1fr;
+  grid-template-rows: 1fr;
+  gap:0;
+  height: calc(100dvh - 140px); /* header ~140px, ajuste si besoin */
+  min-height: 520px;            /* sécurité */
+}
+
+.sidebar{ grid-column:1; grid-row:1; }
+
+.map-container{ 
+  grid-column:2; grid-row:1; 
+  position:relative; 
+  min-height: 480px; 
+}
+
+#map{ width:100%; height:100%; min-height: 480px; }
+
+/* Leaflet: s’assure que le conteneur a bien une hauteur */
+.leaflet-container{ height:100% !important; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px){
+  /* Header en colonne comme tu avais */
+  .header-content{ flex-direction:column; align-items:flex-start; }
+
+  /* Grid mobile: sidebar en haut (auto), carte en dessous (1fr) */
+  .main-container{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr; /* la carte prend tout le reste */
+    height: calc(100dvh - 120px); /* ajuste 120px à la hauteur réelle du header */
+    min-height: 600px;            /* sécurité */
+  }
+
+  .sidebar{
+    grid-column:1; grid-row:1;
+    width:100%;
+    max-height: clamp(180px, 35dvh, 320px); /* scrollable mais compacte */
+    overflow:auto;
+  }
+
+  .map-container{
+    grid-column:1; grid-row:2;
+    height: 100%;                 /* prend la 2e ligne (1fr) */
+    min-height: 50dvh;            /* ne descend jamais en dessous */
+  }
+
+  #map{
     height: 100%;
+    min-height: 50dvh;            /* garde la carte visible */
+  }
+
+  .species-view{ height:auto; }   /* au cas où tu switches la vue */
 }
 
-.species-view {
-    flex: 1;
-    padding: 2rem;
-    overflow-y: auto;
-    background: #f5f5f5;
+/* Optionnel: si iOS te joue des tours avec le 100vh classique */
+@supports (height: 100svh){
+  .main-container{ height: calc(100svh - 140px); }
+  @media (max-width: 768px){
+    .main-container{ height: calc(100svh - 120px); }
+  }
 }
 
-.species-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.species-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-.species-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
-
-.species-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.species-body {
-    padding: 1.2rem;
-}
-
-.species-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-}
-
-.species-names h3 {
-    font-size: 1.2rem;
-    color: #2d5016;
-    margin-bottom: 0.3rem;
-}
-
-.scientific {
-    font-style: italic;
-    color: #666;
-    font-size: 0.85rem;
-}
-
-.status-badge {
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.status-badge.protected {
-    background: #fef3c7;
-    color: #92400e;
-}
-
-.status-badge.common {
-    background: #dbeafe;
-    color: #1e40af;
-}
-
-.species-description {
-    color: #555;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-
-.species-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-}
-
-.tag {
-    background: #e5e7eb;
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.75rem;
-    color: #4b5563;
-}
-
-.view-map-btn {
-    width: 100%;
-    padding: 0.6rem;
-    background: #4a7c2c;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.3s;
-}
-
-.view-map-btn:hover {
-    background: #2d5016;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 10000;
-    padding: 2rem;
-}
-
-.modal.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    background: white;
-    border-radius: 16px;
-    max-width: 700px;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-}
-
-.modal-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.modal-body {
-    padding: 2rem;
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-}
-
-.modal-header h2 {
-    color: #2d5016;
-    margin-bottom: 0.5rem;
-}
-
-.close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    transition: background 0.3s;
-}
-
-.close-btn:hover {
-    background: #f5f5f5;
-}
-
-.detail-section {
-    margin-bottom: 1.5rem;
-}
-
-.detail-section h3 {
-    color: #2d5016;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.detail-section p {
-    color: #555;
-    line-height: 1.6;
-}
-
-.hidden {
-    display: none !important;
-}
-
-.leaflet-popup-content-wrapper {
-    border-radius: 8px;
-}
-
-.leaflet-popup.species-popup .leaflet-popup-content {
-    margin: 8px 10px; /* marge interne pour un rendu compact et lisible */
-}
-
-.popup-content {
-    display: grid;                      /* passe en grid (au lieu de flex) */
-    grid-template-columns: 72px 1fr;    /* vignette + infos */
-    gap: 10px;
-    align-items: center;
-    min-width: 260px;                   /* un peu plus large que 250 pour l’aération */
-}
-
-.popup-image {
-    width: 72px;
-    height: 72px;
-    object-fit: cover;
-    border-radius: 8px;                 /* cohérent avec tes arrondis */
-}
-
-.popup-info h4 {
-    color: #2d5016;                     /* palette de ton header */
-    margin: 0 0 2px;
-    font-size: 15px;
-}
-
-.popup-date {
-    margin: 2px 0;
-    font-size: 12px;
-    color: #666;
-    opacity: 0.85;
-}
-
-.layer-control {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
-    background: white;
-    border-radius: 8px;
-    padding: 0.8rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.layer-control h4 {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.layer-option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-}
-
-.layer-option input {
-    cursor: pointer;
-}
-
-.layer-option label {
-    cursor: pointer;
-    font-size: 0.85rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .main-container {
-        flex-direction: column;
-        height: auto;
-    }
-    
-    .sidebar {
-        width: 100%;
-        max-height: 300px;
-    }
-    
-    .map-container,
-    .species-view {
-        height: 500px;
-    }
-    
-    .species-grid {
-        grid-template-columns: 1fr;
-    }
-}
