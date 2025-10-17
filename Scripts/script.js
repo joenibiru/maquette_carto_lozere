@@ -349,6 +349,48 @@ let filteredData = speciesData;
 const hoverCloseTimers = new WeakMap();
 
 /* =========================
+   Initialisation
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
+  initMap();
+
+  const searchInput = $("searchInput");
+  if (searchInput) {
+    searchInput.addEventListener("input", debounce(applyFilters, 200));
+  }
+
+  const familyFilter = $("familyFilter");
+  if (familyFilter) {
+    familyFilter.addEventListener("change", applyFilters);
+  }
+
+  const statusFilter = $("statusFilter");
+  if (statusFilter) {
+    statusFilter.addEventListener("change", applyFilters);
+  }
+
+  const countEl = $("speciesCount");
+  if (countEl) countEl.textContent = String(speciesData.length);
+  
+  // Gestion du toggle menu mobile
+  const navToggle = document.getElementById('navbarToggle');
+  const navMenu = document.querySelector('.navbar-menu');
+  
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  }
+  
+  // Fermeture menu au clic sur un lien
+  document.querySelectorAll('.navbar-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu?.classList.remove('active');
+    });
+  });
+});
+
+/* =========================
    Initialisation de la carte
 ========================= */
 function initMap() {
@@ -379,7 +421,7 @@ function initMap() {
     }
   );
 
-  // Topo (OpenTopoMap) – optionnel, avec ombrage + courbes
+  // Topo (OpenTopoMap) — optionnel, avec ombrage + courbes
   const openTopo = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
     attribution: "Map data © OpenStreetMap contributors, SRTM | Style © OpenTopoMap (CC-BY-SA)",
     maxZoom: 17,
@@ -834,31 +876,6 @@ function applyFilters() {
     displaySpeciesGrid();
   }
 }
-
-/* =========================
-   Boot
-========================= */
-document.addEventListener("DOMContentLoaded", () => {
-  initMap();
-
-  const searchInput = $("searchInput");
-  if (searchInput) {
-    searchInput.addEventListener("input", debounce(applyFilters, 200));
-  }
-
-  const familyFilter = $("familyFilter");
-  if (familyFilter) {
-    familyFilter.addEventListener("change", applyFilters);
-  }
-
-  const statusFilter = $("statusFilter");
-  if (statusFilter) {
-    statusFilter.addEventListener("change", applyFilters);
-  }
-
-  const countEl = $("speciesCount");
-  if (countEl) countEl.textContent = String(speciesData.length);
-});
 
 /* =========================
    Responsive
