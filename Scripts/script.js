@@ -4,9 +4,11 @@ const speciesData = [
     id: 1,
     name: "Vautour fauve",
     scientificName: "Gyps fulvus",
+     occitanName: "(Occitan): Voltor fauve",
     family: "Oiseaux",
     status: "Protégé",
     image: "https://tryzub.fr/images/nature/oiseaux/vautour_tete_chauve.JPEG",
+    sound: "Audio/crie vautour fauve.mp3",
     description: "Grand rapace nécrophage réintroduit avec succès dans les Grands Causses depuis 1981. Population en croissance de +14% par an.",
     habitat: "Gorges et falaises calcaires des Causses",
     observations: [
@@ -20,9 +22,11 @@ const speciesData = [
     id: 2,
     name: "Cerf élaphe",
     scientificName: "Cervus elaphus",
+     occitanName: "(Occitan): Cèrvi",
     family: "Mammifères",
     status: "Commun",
     image: "https://www.notrenature.be/media/cache/fb_og_image/uploads/media/5e5fbd74a994a/vilda-92658-burlende-edelhert-yves-adams-800-px-45104.jpg",
+    sound: "Audio/brame du cerf.mp3",
     description: "Grand cervidé présent dans les forêts de Lozère. Proie principale du loup avec 80% de son régime alimentaire.",
     habitat: "Forêts de résineux et de feuillus, zones bocagères",
     observations: [
@@ -36,9 +40,11 @@ const speciesData = [
     id: 3,
     name: "Mouflon de Corse",
     scientificName: "Ovis gmelini musimon",
+     occitanName: "(Occitan): Moflon",
     family: "Mammifères",
     status: "Protégé",
     image: "https://www.mercantour-parcnational.fr/sites/mercantour-parcnational.fr/files/styles/extra_large/public/thumbnails/image/22239_pnm_valarcher-robert_800px.jpg?itok=aKVqPtuI",
+     sound: "Audio/Le Cri du Mouflon - Découverte et Curiosités.mp3",
     description: "Ongulé sauvage des reliefs rocheux, présent de 300 à 2500m d'altitude. Population en équilibre avec son milieu.",
     habitat: "Milieux rocailleux bien drainés, landes et maquis",
     observations: [
@@ -51,9 +57,11 @@ const speciesData = [
     id: 4,
     name: "Loup gris",
     scientificName: "Canis lupus",
+     occitanName: "(Occitan): Lop",
     family: "Mammifères",
     status: "Protégé",
     image: "https://s3-eu-west-1.amazonaws.com/blog-ecotree/blog/0001/02/47b656453f6be8c384bbf07abf3613d1e4a3fa0d.jpeg",
+     sound: "Audio/hurlements d une meute de loups gris.mp3",
     description: "Prédateur naturellement de retour en Lozère. Se nourrit à 80% d'ongulés sauvages (cerfs, chevreuils, sangliers, mouflons).",
     habitat: "Forêts et zones montagneuses, zones d'élevage extensif",
     observations: [
@@ -66,10 +74,12 @@ const speciesData = [
     id: 5,
     name: "Vautour moine",
     scientificName: "Aegypius monachus",
+     occitanName: "(Occitan): Voltor negre",
     family: "Oiseaux",
     status: "Protégé",
     image: "https://www.ornitho.photos/wp-content/uploads/2024/06/blog2024.05.23_Z928441-Modifier-1024x683.jpg",
     description: "Plus grand rapace d'Europe, réintroduit dans les Grands Causses. Nécrophage comme le vautour fauve.",
+    sound: "Audio/Cri du vautour moine.mp3",
     habitat: "Falaises isolées et zones boisées des Causses",
     observations: [
       { lat: 44.2789, lng: 3.2281, date: "2025-09-24", location: "Gorges du Tarn" },
@@ -80,9 +90,11 @@ const speciesData = [
     id: 6,
     name: "Chevreuil européen",
     scientificName: "Capreolus capreolus",
+     occitanName: "(Occitan): Cabiròl",
     family: "Mammifères",
     status: "Commun",
     image: "https://ressources.shna-ofab.fr/visuels/1479803045_26_CAPREOLUS_CAPREOLUS_G.BEDRINES.JPG.jpg",
+    sound: "Audio/Cri du chevreuil - le brame _ le râle.mp3",
     description: "Petit cervidé très répandu en Lozère. Fait partie des proies du loup.",
     habitat: "Lisières forestières, bocages, zones semi-ouvertes",
     observations: [
@@ -95,10 +107,12 @@ const speciesData = [
     id: 7,
     name: "Aigle royal",
     scientificName: "Aquila chrysaetos",
+     occitanName: "(Occitan): Agla reial",
     family: "Oiseaux",
     status: "Protégé",
     image: "https://www.lpo.fr/var/site/storage/images/_aliases/detailed_content/7/3/8/6/246837-1-fre-FR/dsc3102brunoberthemy.jpg",
     description: "Majestueux rapace des montagnes, nichant dans les falaises isolées.",
+    sound: "Audio/Cri de l aigle - le glatissement.mp3",
     habitat: "Hautes falaises et zones montagneuses",
     observations: [
       { lat: 44.4259, lng: 3.7442, date: "2025-09-21", location: "Sommet du Finiels" },
@@ -109,9 +123,11 @@ const speciesData = [
     id: 8,
     name: "Sanglier",
     scientificName: "Sus scrofa",
+     occitanName: "(Occitan): Singlar",
     family: "Mammifères",
     status: "Commun",
     image: "https://www.radiofrance.fr/pikapi/images/ac6ec2d0-55aa-4d96-bc77-e95e7191e26f/1280?webp=false",
+    sound: "Audio/Cri du sanglier - le grognement _ le grommellement.mp3",
     description: "Ongulé forestier omnivore, très présent en Lozère. Fait partie du régime alimentaire du loup.",
     habitat: "Forêts mixtes, zones de bocage",
     observations: [
@@ -124,9 +140,11 @@ const speciesData = [
     id: 9,
     name: "Milan royal",
     scientificName: "Milvus milvus",
+     occitanName: "(Occitan): Milana reiala",
     family: "Oiseaux",
     status: "Protégé",
     image: "https://www.pyrenees-parcnational.fr/sites/pyrenees-parcnational.fr/files/styles/extra_large/public/milan_royal_louron_patrick_harle_prtps_2014_20.jpg?itok=G56O0exq",
+    sound: "Audio/Milan royal.mp3",
     description: "Rapace migrateur reconnaissable à sa queue échancrée rousse. Présent surtout en période de migration.",
     habitat: "Zones agricoles ouvertes, prairies",
     observations: [
@@ -138,9 +156,11 @@ const speciesData = [
     id: 10,
     name: "Chamois",
     scientificName: "Rupicapra rupicapra",
+     occitanName: "(Occitan): Camòç",
     family: "Mammifères",
     status: "Commun",
     image: "https://woody.cloudly.space/app/uploads/aubracgorgesdutarn/2023/12/thumbs/maman-et-chamois-640x360.jpg",
+    sound: "Audio/The sound of the mountain Chamois _ As the Chamois says.mp3",
     description: "Capriné des zones rocheuses et montagneuses, présent dans les reliefs de Lozère.",
     habitat: "Zones rocheuses et escarpées d'altitude",
     observations: [
@@ -153,6 +173,7 @@ const speciesData = [
     id: 11,
     name: "Lézard vert occidental",
     scientificName: "Lacerta bilineata",
+     occitanName: "(Occitan): Lésert verd",
     family: "Reptiles",
     status: "Commun",
     image: "https://www.lanaturemoi.com/wp-content/uploads/2021/08/Lezard-vert-Lacerta-bilineata-03.jpg",
@@ -168,6 +189,7 @@ const speciesData = [
     id: 12,
     name: "Lézard des murailles",
     scientificName: "Podarcis muralis",
+     occitanName: "(Occitan): Lésert de murralhas",
     family: "Reptiles",
     status: "Très commun",
     image: "https://www.labaule-guerande.com/medias/images/info_pages/multitailles/640x480_lezard-des-murailles-882.jpg",
@@ -183,9 +205,11 @@ const speciesData = [
     id: 13,
     name: "Couleuvre d’esculape",
     scientificName: "Zamenis longissimus",
+     occitanName: "(Occitan): Colòbra d'Esculapi",
     family: "Reptiles",
     status: "Protégé",
     image: "https://biodiv-occitanie.fr/static/medias/444446_8238_Couleuvre_dEsculape_-_Zamenis_longissimus_-_Ariege.jpg",
+    sound: "Audio/Snake Sounds.mp3",
     description: "Grande couleuvre non venimeuse, agile et arboricole. Fréquente les forêts et vergers lozériens. Symbole du caducée des médecins.",
     habitat: "Lisières forestières, haies, murets, vergers anciens",
     observations: [
@@ -198,9 +222,11 @@ const speciesData = [
     id: 14,
     name: "Vipère aspic",
     scientificName: "Vipera aspis",
+     occitanName: "(Occitan): Vipèra aspic",
     family: "Reptiles",
     status: "Commun",
     image: "https://upload.wikimedia.org/wikipedia/commons/4/40/Vipera_aspis_Lothringen_044.jpg",
+    sound: "Audio/Snake Sounds.mp3",
     description: "Serpent venimeux discret, reconnaissable à sa tête triangulaire. Elle évite les humains et préfère fuir. Espèce protégée, utile à l’équilibre naturel.",
     habitat: "Landes, éboulis, talus ensoleillés, lisières sèches",
     observations: [
@@ -213,6 +239,7 @@ const speciesData = [
     id: 15,
     name: "Orvet fragile",
     scientificName: "Anguis fragilis",
+     occitanName: "(Occitan): Anilhon",
     family: "Reptiles",
     status: "Commun",
     image: "https://www.researchgate.net/publication/283148990/figure/fig2/AS:288374389788675@1445765220778/Male-dorvet-fragile-Anguis-fragilis-presentant-des-points-bleus-Foret-de.png",
@@ -228,9 +255,11 @@ const speciesData = [
     id: 16,
     name: "Couleuvre verte et jaune",
     scientificName: "Hierophis viridiflavus",
+     occitanName: "(Occitan): Colòbra verda e jauna",
     family: "Reptiles",
     status: "Commun",
     image: "https://www.lanaturemoi.com/wp-content/uploads/2024/10/couleuvre-verte-et-jaune-25.jpg",
+    sound: "Audio/Snake Sounds.mp3",
     description: "Rapide et nerveuse, cette grande couleuvre non venimeuse affiche une robe verte et jaune spectaculaire. Elle chasse lézards et petits rongeurs.",
     habitat: "Coteaux secs, garrigues, murs de pierre, talus",
     observations: [
@@ -243,6 +272,7 @@ const speciesData = [
     id: 17,
     name: "Tortue d’Hermann",
     scientificName: "Testudo hermanni",
+     occitanName: "(Occitan): Tartuga d'Erman",
     family: "Reptiles",
     status: "Rare / introduite",
     image: "https://www.jardiner-malin.fr/wp-content/uploads/2024/01/tortue-hermann-1.jpg",
@@ -257,6 +287,7 @@ const speciesData = [
     id: 18,
     name: "Lézard vivipare",
     scientificName: "Zootoca vivipara",
+     occitanName: "(Occitan): Lésert vivipar",
     family: "Reptiles",
     status: "Commun",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/L%C3%A9zard_vivipaire.jpg/1200px-L%C3%A9zard_vivipaire.jpg",
@@ -271,6 +302,7 @@ const speciesData = [
     id: 19,
     name: "Lézard ocellé",
     scientificName: "Timon lepidus",
+     occitanName: "(Occitan): Lésert ocelat",
     family: "Reptiles",
     status: "Protégé",
     image: "https://iodde.org/Handlers/HTFile.ashx?MEDIAID=183434",
@@ -286,9 +318,11 @@ const speciesData = [
     id: 20,
     name: "Couleuvre vipérine",
     scientificName: "Natrix maura",
+     occitanName: "(Occitan): Colòbra viperina",
     family: "Reptiles",
     status: "Commun",
     image: "https://www.infofauna.ch/sites/default/files/styles/grande_image_libre/public/images/media/2023/nama_meyer.jpg?itok=qThsbZOp",
+    sound: "Audio/Snake Sounds.mp3",
     description: "Couleuvre semi-aquatique imitant la vipère par sa forme et son comportement. Inoffensive et excellente nageuse, elle se nourrit surtout de poissons et d’amphibiens.",
     habitat: "Bords de rivières, ruisseaux, étangs et mares",
     observations: [
@@ -311,8 +345,7 @@ let markers = [];
 let currentView = "map";
 let filteredData = speciesData;
 
-
-// timer par marqueur pour l’anti-clignotement du popup
+// timer par marqueur pour l'anti-clignotement du popup
 const hoverCloseTimers = new WeakMap();
 
 /* =========================
@@ -322,18 +355,69 @@ function initMap() {
   // Centre sur la Lozère
   map = L.map("map").setView([44.4833, 3.5], 10);
 
-  // Fond de carte OpenStreetMap
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  // --- Fonds de carte ---
+  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "© OpenStreetMap contributors",
-    maxZoom: 18,
-  }).addTo(map);
+    maxZoom: 19,
+  });
+
+  // Satellite (Esri World Imagery)
+  const esriSatellite = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community",
+      maxZoom: 19,
+    }
+  );
+
+  // Topo (Esri World Topo Map)
+  const esriTopo = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Tiles © Esri — Esri, Garmin, FAO, NOAA, USGS, © OpenStreetMap contributors",
+      maxZoom: 19,
+    }
+  );
+
+  // Topo (OpenTopoMap) – optionnel, avec ombrage + courbes
+  const openTopo = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+    attribution: "Map data © OpenStreetMap contributors, SRTM | Style © OpenTopoMap (CC-BY-SA)",
+    maxZoom: 17,
+  });
+
+  // --- Relief (ombrage) en surcouche activable ---
+  const esriHillshade = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/Elevations/World_Hillshade/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Hillshade © Esri",
+      maxZoom: 19,
+      opacity: 0.65,
+    }
+  );
+
+  // Ajoute un fond par défaut (OSM)
+  osm.addTo(map);
+
+  // Contrôle de couches (fonds exclusifs + surcouches)
+  const baseMaps = {
+    "Plan (OSM)": osm,
+    "Satellite (Esri)": esriSatellite,
+    "Topo (Esri)": esriTopo,
+    "Topo (OpenTopoMap)": openTopo,
+  };
+
+  const overlays = {
+    "Relief (Esri Hillshade)": esriHillshade,
+  };
+
+  L.control.layers(baseMaps, overlays, { collapsed: false }).addTo(map);
 
   // Ajout initial des marqueurs
   updateMarkers();
 }
 
 /* =========================
-   Marqueurs + popups
+   Marqueurs + popups (avec son)
 ========================= */
 function updateMarkers() {
   // Nettoyer les anciens marqueurs
@@ -341,6 +425,8 @@ function updateMarkers() {
   markers = [];
 
   filteredData.forEach((species) => {
+    if (!species || !Array.isArray(species.observations)) return;
+
     species.observations.forEach((obs) => {
       const marker = L.marker([obs.lat, obs.lng], { riseOnHover: true })
         .bindPopup(createPopupContent(species, obs), {
@@ -358,12 +444,87 @@ function updateMarkers() {
       // Clic = ouvre la fiche détaillée
       marker.on("click", () => openModal(species));
 
-      // Empêche la fermeture si la souris survole le popup lui-même
+      // Interactions du popup (survol + SON)
       marker.on("popupopen", (e) => {
         const popupEl = e.popup.getElement();
         if (!popupEl) return;
+
+        // Empêche la fermeture quand le popup est survolé
         popupEl.addEventListener("mouseenter", () => clearHoverClose(marker));
         popupEl.addEventListener("mouseleave", () => scheduleHoverClose(marker));
+
+        // Gestion du son
+        const btn = popupEl.querySelector(".sound-btn");
+        const audio = popupEl.querySelector("audio");
+
+        if (btn && audio) {
+          // Logs de diagnostic
+          console.log("🔊 Audio trouvé:", audio.src);
+          
+          // Détection d'erreur de chargement
+          audio.addEventListener("error", () => {
+            console.error("❌ Erreur chargement:", audio.src);
+            console.error("Code erreur:", audio.error?.code);
+            btn.textContent = "❌ Son introuvable";
+          });
+
+          audio.addEventListener("loadedmetadata", () => {
+            console.log("✅ Métadonnées chargées - Durée:", audio.duration);
+          });
+
+          btn.addEventListener("click", (ev) => {
+            ev.stopPropagation();
+
+            if (audio.paused) {
+              // Met en pause d'éventuels autres audios
+              document.querySelectorAll(".species-popup audio").forEach((a) => {
+                if (a !== audio) { try { a.pause(); } catch(_){} }
+              });
+
+              audio.volume = 1.0;
+              audio.muted = false;
+              audio.currentTime = 0;
+
+              audio.play().then(() => {
+                console.log("▶️ Lecture démarrée avec succès");
+                btn.textContent = "⏸️ Pause";
+                
+                // EMPÊCHE la fermeture automatique pendant la lecture
+                clearHoverClose(marker);
+                
+              }).catch((err) => {
+                console.error("❌ Erreur de lecture:", err.name, err.message);
+                btn.textContent = "🔊 Écouter le cri";
+              });
+              
+              // Quand l'audio se termine, réactive la possibilité de fermeture
+              audio.onended = () => {
+                console.log("✅ Audio terminé");
+                btn.textContent = "🔊 Écouter le cri";
+              };
+              
+            } else {
+              audio.pause();
+              console.log("⏸️ Lecture mise en pause");
+              btn.textContent = "🔊 Écouter le cri";
+            }
+          });
+        }
+      });
+
+      // À la fermeture du popup : stoppe le son et remet le libellé
+      marker.on("popupclose", (e) => {
+        const popupEl = e.popup.getElement();
+        if (!popupEl) return;
+        const audio = popupEl.querySelector("audio");
+        const btn = popupEl.querySelector(".sound-btn");
+        if (audio) { 
+          try { 
+            audio.pause(); 
+            console.log("🛑 Audio arrêté (popup fermé)");
+          } catch(_){} 
+        }
+        if (btn) btn.textContent = "🔊 Écouter le cri";
       });
 
       markers.push(marker);
@@ -378,6 +539,21 @@ function openHoverPopup(marker) {
 
 function scheduleHoverClose(marker) {
   clearHoverClose(marker);
+  
+  // Vérifie si un audio est en train de jouer dans ce popup
+  const popup = marker.getPopup();
+  if (popup) {
+    const popupEl = popup.getElement();
+    if (popupEl) {
+      const audio = popupEl.querySelector("audio");
+      // Si l'audio joue, ne ferme PAS le popup
+      if (audio && !audio.paused) {
+        console.log("🎵 Audio en lecture, popup maintenu ouvert");
+        return; // Ne programme pas la fermeture
+      }
+    }
+  }
+  
   const t = setTimeout(() => marker.closePopup(), 180);
   hoverCloseTimers.set(marker, t);
 }
@@ -394,14 +570,24 @@ function clearHoverClose(marker) {
    Contenu du popup
 ========================= */
 function createPopupContent(species, observation) {
+  const soundBlock = species.sound
+    ? `
+      <div class="popup-audio">
+        <button class="sound-btn" data-sound="${escapeHtml(species.sound)}">🔊 Écouter le cri</button>
+        <audio preload="metadata" src="${escapeHtml(species.sound)}"></audio>
+      </div>`
+    : "";
+
   return `
     <div class="popup-content">
       <img src="${escapeHtml(species.image)}" alt="${escapeHtml(species.name)}" class="popup-image">
       <div class="popup-info">
         <h4>${escapeHtml(species.name)}</h4>
+        ${species.occitanName ? `<p class="occitan-name" style="color: #d97706; font-style: italic; font-size: 0.9em; margin: 2px 0;">${escapeHtml(species.occitanName)}</p>` : ''}
         <p class="scientific"><em>${escapeHtml(species.scientificName)}</em></p>
         <p class="popup-date">📍 ${escapeHtml(observation.location)}</p>
         <p class="popup-date">📅 ${formatDate(observation.date)}</p>
+        ${soundBlock}
       </div>
     </div>
   `;
@@ -489,6 +675,7 @@ function displaySpeciesGrid() {
         <div class="species-header">
           <div class="species-names">
             <h3>${escapeHtml(species.name)}</h3>
+            ${species.occitanName ? `<p class="occitan-name" style="color: #d97706; font-style: italic; margin: 2px 0; font-size: 0.95em;">${escapeHtml(species.occitanName)}</p>` : ''}
             <p class="scientific">${escapeHtml(species.scientificName)}</p>
           </div>
           <span class="status-badge ${species.status === "Protégé" ? "protected" : "common"}">
@@ -566,6 +753,7 @@ function openModal(species) {
     <div class="modal-header">
       <div>
         <h2>${escapeHtml(species.name)}</h2>
+        ${species.occitanName ? `<p class="occitan-name" style="color: #d97706; font-style: italic; font-size: 1.1em; margin: 4px 0;">${escapeHtml(species.occitanName)}</p>` : ''}
         <p class="scientific">${escapeHtml(species.scientificName)}</p>
       </div>
       <span class="status-badge ${species.status === "Protégé" ? "protected" : "common"}">
@@ -586,13 +774,13 @@ function openModal(species) {
     <div class="detail-section">
       <h3>📍 Observations récentes (${species.observations.length})</h3>
       ${species.observations
-        .map(
-          (obs) =>
-            `<p><strong>${escapeHtml(obs.location)}</strong> - ${formatDate(
-              obs.date
-            )}</p>`
-        )
-        .join("")}
+      .map(
+        (obs) =>
+          `<p><strong>${escapeHtml(obs.location)}</strong> - ${formatDate(
+            obs.date
+          )}</p>`
+      )
+      .join("")}
     </div>
 
     <div class="detail-section">
@@ -671,78 +859,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const countEl = $("speciesCount");
   if (countEl) countEl.textContent = String(speciesData.length);
 });
-function initMap() {
-  // Centre sur la Lozère
-  map = L.map("map").setView([44.4833, 3.5], 10);
 
-  // --- Fonds de carte ---
-  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "© OpenStreetMap contributors",
-    maxZoom: 19,
-  });
-
-  // Satellite (Esri World Imagery)
-  const esriSatellite = L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-    {
-      attribution: "Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community",
-      maxZoom: 19,
-    }
-  );
-
-  // Topo (Esri World Topo Map)
-  const esriTopo = L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
-    {
-      attribution: "Tiles © Esri — Esri, Garmin, FAO, NOAA, USGS, © OpenStreetMap contributors",
-      maxZoom: 19,
-    }
-  );
-
-  // Topo (OpenTopoMap) – optionnel, avec ombrage + courbes
-  const openTopo = L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
-    attribution: "Map data © OpenStreetMap contributors, SRTM | Style © OpenTopoMap (CC-BY-SA)",
-    maxZoom: 17,
-  });
-
-  // --- Relief (ombrage) en surcouche activable ---
-  const esriHillshade = L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/Elevations/World_Hillshade/MapServer/tile/{z}/{y}/{x}",
-    {
-      attribution: "Hillshade © Esri",
-      maxZoom: 19,
-      opacity: 0.65, // ajuste si tu veux plus/moins de relief
-    }
-  );
-
-  // Ajoute un fond par défaut (OSM)
-  osm.addTo(map);
-
-  // Contrôle de couches (fonds exclusifs + surcouches)
-  const baseMaps = {
-    "Plan (OSM)": osm,
-    "Satellite (Esri)": esriSatellite,
-    "Topo (Esri)": esriTopo,
-    "Topo (OpenTopoMap)": openTopo,
-  };
-
-  const overlays = {
-    "Relief (Esri Hillshade)": esriHillshade,
-  };
-
-  L.control.layers(baseMaps, overlays, { collapsed: false }).addTo(map);
-
-  // Ajout initial des marqueurs
-  updateMarkers();
-}
+/* =========================
+   Responsive
+========================= */
 window.addEventListener('resize', () => {
   if (map) map.invalidateSize();
 });
-
-// Si tu as un toggle liste/carte:
-function showMapView() {
-  // ... ton code pour afficher .map-container ...
-  requestAnimationFrame(() => map.invalidateSize());
-}
-
-   

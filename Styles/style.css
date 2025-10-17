@@ -121,7 +121,7 @@ body{
 
   /* --- Personnalisation du fond --- */
   background-color: #ddcd9a;
-  background-image: url(/Images/logoPA48.png);
+  background-image: url(/Images/logo_PA48_V2.png);
   background-repeat: no-repeat;         
   background-position: bottom;          
   background-size: contain;             
@@ -269,6 +269,21 @@ body{
   color: var(--earth); margin:0 0 2px; font-size:15px; font-family: var(--font-sub); font-weight:600;
 }
 .popup-date{ margin:2px 0; font-size:12px; color: var(--muted); opacity:.9; }
+
+.popup-audio { margin-top:.5rem; display:flex; align-items:center; gap:.5rem; }
+.sound-btn{
+  background: var(--pollen);
+  color:#fff;
+  border:none;
+  padding:6px 12px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.sound-btn:hover{ transform: translateY(-1px); opacity:.95; }
+
+
 
 /* ---------- Layout (desktop) ---------- */
 .main-container{
