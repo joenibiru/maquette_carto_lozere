@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - ParcoursAnimal48</title>
+    <link rel="stylesheet" href="/Styles/style.css">
+    <link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="/Images/logo.png" alt="Logo">
+                </div>
+                <div class="site-title">
+                    <h1>🛒 Boutique Parcours📍Animal🐾48</h1>
+                    <p>« Soutenez la préservation de la faune »</p>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">🗺️ Carte</a></li>
+                <li>
+                    <a href="#panier" class="navbar-cart">
+                        🛍️ Panier
+                        <span class="cart-count" id="navCartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+            <button class="navbar-toggle" id="navbarToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    </div>
+
+    <div class="shop-container">
+        <!-- Filtres boutique -->
+        <aside class="shop-sidebar">
+            <div class="filters-section">
+                <h3>🔍 Catégories</h3>
+                <div class="filter-group">
+                    <label>
+                        <input type="radio" name="category" value="all" checked onchange="filterProducts()"> Tous les produits
+                    </label>
+                    <label>
+                        <input type="radio" name="category" value="livres" onchange="filterProducts()"> 📚 Livres
+                    </label>
+                    <label>
+                        <input type="radio" name="category" value="equipement" onchange="filterProducts()"> 🔭 Équipement
+                    </label>
+                    <label>
+                        <input type="radio" name="category" value="souvenirs" onchange="filterProducts()"> 🎁 Souvenirs
+                    </label>
+                    <label>
+                        <input type="radio" name="category" value="vetements" onchange="filterProducts()"> 👕 Vêtements
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Grille de produits -->
+        <main class="shop-main">
+            <div class="products-grid" id="productsGrid">
+                <!-- Les produits seront ajoutés par JavaScript -->
+            </div>
+        </main>
+
+        <!-- Panier latéral -->
+        <aside class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h3>🛍️ Votre Panier</h3>
+                <button class="cart-close" onclick="toggleCart()">×</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="cart-empty">Votre panier est vide</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">0,00 €</span>
+                </div>
+                <button class="btn-checkout" onclick="openCheckout()">Passer commande</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modal de paiement -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-modal">
+            <button class="close-btn" onclick="closeCheckout()">×</button>
+            <h2>🔒 Paiement sécurisé</h2>
+            
+            <form id="checkoutForm" onsubmit="processPayment(event)">
+                <div class="form-section">
+                    <h3>📧 Coordonnées</h3>
+                    <div class="form-group">
+                        <label>Nom complet *</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Téléphone *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>📍 Adresse de livraison</h3>
+                    <div class="form-group">
+                        <label>Adresse *</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Code postal *</label>
+                            <input type="text" id="zipCode" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ville *</label>
+                            <input type="text" id="city" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>💳 Paiement (fictif)</h3>
+                    <div class="form-group">
+                        <label>Numéro de carte *</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date d'expiration *</label>
+                            <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label>CVV *</label>
+                            <input type="text" id="cardCVV" placeholder="123" maxlength="3" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-summary">
+                    <div class="summary-line">
+                        <span>Sous-total:</span>
+                        <span id="checkoutSubtotal">0,00 €</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Livraison:</span>
+                        <span>Gratuite</span>
+                    </div>
+                    <div class="summary-line total-line">
+                        <span>Total:</span>
+                        <span id="checkoutTotal">0,00 €</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-pay">Payer maintenant</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de confirmation -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content confirmation-modal">
+            <div class="confirmation-icon">✅</div>
+            <h2>Commande confirmée !</h2>
+            <p>Merci pour votre achat. Vous recevrez un email de confirmation sous peu.</p>
+            <p class="order-number">Numéro de commande : <strong id="orderNumber"></strong></p>
+            <button class="btn-primary" onclick="closeConfirmation()">Retour à la boutique</button>
+        </div>
+    </div>
+
+    <script src="/Scripts/shop.js"></script>
+    <script src="/Scripts/cart.js"></script>
+</body>
+
+</html>
